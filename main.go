@@ -2,35 +2,26 @@ package main
 
 import (
 	"fmt"
-	"os/exec"
+
+	changelog "github.com/kukkonenjoni/it4cargo-git/commands"
+	"github.com/kukkonenjoni/it4cargo-git/util"
 )
-
-func runGitCommand(args ...string) (string, error) {
-	// Create the command with "git" and the passed arguments
-	cmd := exec.Command("git", args...)
-
-	// Get the output of the command
-	output, err := cmd.CombinedOutput()
-	if err != nil {
-		return "", err
-	}
-
-	return string(output), nil
-}
 
 func main() {
 	// Example: git log
-	output, err := runGitCommand("log", "--pretty=format:'%s'")
+	output, err := util.RunGitCommand("log", "--pretty=format:'%s'")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 	fmt.Println("Output:\n", output)
 
-	output, err = runGitCommand("pull")
+	output, err = util.RunGitCommand("pull")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 	fmt.Println("Output: ", output)
+
+	changelog.CreateChangeLog()
 }
