@@ -19,19 +19,18 @@ func runGitCommand(args ...string) (string, error) {
 }
 
 func main() {
-	// Example: git status
-	output, err := runGitCommand("status")
+	// Example: git log
+	output, err := runGitCommand("log", "--pretty=format:'%s'")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 	fmt.Println("Output:\n", output)
 
-	// Example: git log
-	output, err = runGitCommand("log")
+	output, err = runGitCommand("pull")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
-	fmt.Println("Output:\n", output)
+	fmt.Println("Output: ", output)
 }
