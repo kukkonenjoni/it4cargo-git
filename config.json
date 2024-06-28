@@ -1,0 +1,16 @@
+{
+	"projectid": "57172339",
+	"tagname": "v2.0.0",
+	"releasename": "Release v2.0.0",
+	"base": "C:/Koodausta/IT4Cargo-Git/",
+	"baserepo": "git@gitlab.com:apha1/apha-inc.git",
+	"basereponame": "apha-inc",
+	"repositories": [
+		{
+			"clientname": "Test",
+			"branch": "main",
+			"giturl": "git@gitlab.com:apha1/apha-test.git",
+			"filename": "apha-test"
+		}
+	]
+}
